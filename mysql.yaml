@@ -4,5 +4,5 @@
   tasks:
   - name: instal msql surver
     ansible.builtin.package:
-      name: mysql-surver
+      name: mysql-server
       state: present
