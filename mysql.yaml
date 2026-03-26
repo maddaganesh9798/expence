@@ -1,0 +1,8 @@
+- name: msql conifiguration
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: instal msql surver
+    ansible.builtin.package:
+      name: mysql-surver
+      state: present
