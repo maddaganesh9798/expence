@@ -50,12 +50,12 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
 
-#   - name: ansible to install pymysql
-#     ansible.builtin.pip:
-#       name:
-#       - PyMySQL
-#       - cryptography
-#       executable: pip3.9
+  - name: ansible to install pymysql
+    ansible.builtin.pip:
+      name:
+      - PyMySQL
+      - cryptography
+      executable: pip3.9
 
   - name: import mysql data
     community.mysql.mysql_db:
@@ -66,8 +66,8 @@
       name: all
       state: import
 
-  - name: daemon reload
-    ansible.builtin.systemd_service:
-      daemon_reload: true
-      state: restarted
-      name: backend
+  # - name: daemon reload
+  #   ansible.builtin.systemd_service:
+  #     daemon_reload: true
+  #     state: restarted
+  #     name: backend
